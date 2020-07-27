@@ -23,9 +23,7 @@ public class SkillAnnotationApp {
 	 * application that can be used to annotate sets of documents
 	 * based on ontology gazetteer in the annotation/extraction system.
 	 */
-	
-	
-	
+
 	public CorpusController createResources (Gazetteer ontrootgaz) throws GateException, MalformedURLException {
 		
 		try {
@@ -52,6 +50,7 @@ public class SkillAnnotationApp {
 				"gate.creole.splitter.RegexSentenceSplitter",
 				"gate.creole.tokeniser.DefaultTokeniser",
 				"gate.creole.POSTagger",
+//				Transducer
 		        "gate.creole.morph.Morph"};
 				
 		CorpusController skillannotator = (CorpusController)Factory
@@ -108,9 +107,6 @@ public class SkillAnnotationApp {
 		 ((SerialAnalyserController)skillannotator).add((gate.LanguageAnalyser)Factory
 	              .createResource("gate.creole.Transducer",startJapeFeature));
 	      System.out.println("done");
-		
-	     
-	      
 	      
 	      
 	    skillannotator.setName("Skills annotator");  
